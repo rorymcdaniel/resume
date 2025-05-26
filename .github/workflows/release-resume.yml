@@ -49,7 +49,9 @@ jobs:
           echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
       - name: Build resume PDF
-        run: npm run build-and-run
+        run: |
+          npm run build
+          node dist/markdownToPdf.js
         env:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
