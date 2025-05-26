@@ -1,0 +1,37 @@
+body {
+  font-family: 'Liberation Sans', 'DejaVu Sans', sans-serif;
+  font-size: 9.25pt;           /* Smaller font to save space */
+  line-height: 1.25;           /* Slightly tighter line spacing */
+  margin: 0.25in;               /* Narrower margins */
+  color: #222;
+}
+
+h1, h2, h3 {
+  font-family: inherit;
+  font-weight: bold;
+  margin: 0.75em 0 0.4em 0;    /* Reduce vertical spacing around headings */
+}
+
+h1 {
+  font-size: 1.25em;
+}
+h2 {
+  font-size: 1.1em;
+}
+h3 {
+  font-size: 1em;
+}
+
+p {
+  margin: 0 0 0.4em 0;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0.4em;
+  padding-left: 1.25em;
+}
+
+li {
+  margin-bottom: 0.15em;      /* Reduce vertical space between bullets */
+}
