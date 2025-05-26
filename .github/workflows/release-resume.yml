@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -32,21 +34,26 @@ jobs:
           PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
 
-      - name: Bump version and create tag
-        id: tagger
-        uses: anothrNick/github-tag-action@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          WITH_V: true
-          DEFAULT_BUMP: patch
-          RELEASE_BRANCHES: main
-          TAG_CONTEXT: commit
+      - name: Get version
+        id: get_version
+        run: |
+          # Get the latest tag
+          latest_tag=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+          # Extract version number
+          version=$(echo $latest_tag | sed 's/v//')
+          # Split into major, minor, patch
+          IFS='.' read -r major minor patch <<< "$version"
+          # Increment patch version
+          new_patch=$((patch + 1))
+          # Create new version
+          new_version="v$major.$minor.$new_patch"
+          echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
-      - name: Create GitHub release
+      - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ steps.tagger.outputs.new_tag }}
-          name: Resume ${{ steps.tagger.outputs.new_tag }}
+          tag_name: ${{ steps.get_version.outputs.new_version }}
+          name: Resume ${{ steps.get_version.outputs.new_version }}
           files: output/resume.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
