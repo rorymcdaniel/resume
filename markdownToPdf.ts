@@ -5,12 +5,15 @@ import * as path from 'path';
 
 async function generatePDF() {
   try {
+    // Get the project root directory (one level up from dist)
+    const projectRoot = path.resolve(__dirname, '..');
+    
     // Read the markdown file
-    const markdownPath = path.join(__dirname, 'README.md');
+    const markdownPath = path.join(projectRoot, 'README.md');
     const markdown = fs.readFileSync(markdownPath, 'utf-8');
     
     // Read the CSS file
-    const cssPath = path.join(__dirname, 'resumeStyle.css');
+    const cssPath = path.join(projectRoot, 'resumeStyle.css');
     const css = fs.readFileSync(cssPath, 'utf-8');
     
     // Convert markdown to HTML
@@ -53,7 +56,7 @@ async function generatePDF() {
     });
 
     // Ensure output directory exists
-    const outputDir = path.join(__dirname, 'output');
+    const outputDir = path.join(projectRoot, 'output');
     if (!fs.existsSync(outputDir)) {
       fs.mkdirSync(outputDir);
     }
