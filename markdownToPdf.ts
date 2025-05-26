@@ -1,6 +1,15 @@
 import { mdToPdf } from 'md-to-pdf';
 import * as path from 'path';
 import * as fs from 'fs';
+import puppeteer from 'puppeteer';
+
+const originalLaunch = puppeteer.launch;
+puppeteer.launch = (options) => {
+  return originalLaunch({
+    ...options,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+};
 
 (async () => {
   const input = path.join(__dirname, 'README.md');
