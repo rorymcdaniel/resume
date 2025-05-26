@@ -58,8 +58,11 @@ async function generatePDF() {
       fs.mkdirSync(outputDir);
     }
 
+    // Get version from environment variable or use default
+    const version = process.env.RESUME_VERSION || 'dev';
+    const outputPath = path.join(outputDir, `rory-mcdaniel-resume-v${version}.pdf`);
+
     // Generate PDF
-    const outputPath = path.join(outputDir, 'resume.pdf');
     await page.pdf({
       path: outputPath,
       format: 'A4',

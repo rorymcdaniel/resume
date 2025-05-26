@@ -33,12 +33,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build resume PDF
-        run: npm run build-and-run
-        env:
-          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
-          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
-
       - name: Get version
         id: get_version
         run: |
@@ -54,11 +48,18 @@ jobs:
           new_version="v$major.$minor.$new_patch"
           echo "new_version=$new_version" >> $GITHUB_OUTPUT
 
+      - name: Build resume PDF
+        run: npm run build-and-run
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: true
+          PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
+          RESUME_VERSION: ${{ steps.get_version.outputs.new_version }}
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.get_version.outputs.new_version }}
           name: Resume ${{ steps.get_version.outputs.new_version }}
-          files: output/resume.pdf
+          files: output/rory-mcdaniel-resume-${{ steps.get_version.outputs.new_version }}.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
