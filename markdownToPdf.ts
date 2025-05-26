@@ -63,7 +63,9 @@ async function generatePDF() {
 
     // Get version from environment variable or use default
     const version = process.env.RESUME_VERSION || 'dev';
-    const outputPath = path.join(outputDir, `rory-mcdaniel-resume-v${version}.pdf`);
+    // Remove 'v' prefix if it exists to avoid double 'v'
+    const cleanVersion = version.startsWith('v') ? version.substring(1) : version;
+    const outputPath = path.join(outputDir, `rory-mcdaniel-resume-v${cleanVersion}.pdf`);
 
     // Generate PDF
     await page.pdf({
