@@ -1,24 +1,14 @@
+import { mdToPdf } from 'md-to-pdf';
 import * as path from 'path';
-import * as markdownpdf from 'markdown-pdf';
-const inputFilePath = path.join(__dirname, 'README.md');
-const outputFileName = 'output/resume.pdf';
 
-const options: markdownpdf.Options = {
-    cssPath: path.join(__dirname, 'resumeStyle.css'),
-    paperFormat: 'Letter',
-    paperBorder: '1cm',
-    renderDelay: 1000,
-};
+(async () => {
+  const input = path.join(__dirname, 'README.md');
+  const output = path.join(__dirname, 'output', 'resume.pdf');
 
-const convertMarkdownToPdf = async (inputFile: string, outputFile: string) => {
-    (markdownpdf(options).from(inputFile) as any)
-        .to(outputFile, async (err: Error) => {
-            if (err) {
-                console.error('Error converting markdown to PDF:', err);
-            } else {
-                console.log(`Successfully converted markdown to ${outputFile}`);
-            }
-        });
-};
-
-convertMarkdownToPdf(inputFilePath, outputFileName);
+  await mdToPdf({ path: input }, { dest: output, css: path.join(__dirname, 'resumeStyle.css') })
+    .then(() => console.log('PDF generated successfully.'))
+    .catch((err) => {
+      console.error('Error generating PDF:', err);
+      process.exit(1);
+    });
+})();

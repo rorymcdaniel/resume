@@ -36,31 +36,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
+var md_to_pdf_1 = require("md-to-pdf");
 var path = require("path");
-var markdownpdf = require("markdown-pdf");
-var inputFilePath = path.join(__dirname, 'README.md');
-var outputFileName = 'output/resume.pdf';
-var options = {
-    cssPath: path.join(__dirname, 'resumeStyle.css'),
-    paperFormat: 'Letter',
-    paperBorder: '1cm',
-    renderDelay: 1000
-};
-var convertMarkdownToPdf = function (inputFile, outputFile) { return __awaiter(void 0, void 0, void 0, function () {
+(function () { return __awaiter(void 0, void 0, void 0, function () {
+    var input, output;
     return __generator(this, function (_a) {
-        markdownpdf(options).from(inputFile)
-            .to(outputFile, function (err) { return __awaiter(void 0, void 0, void 0, function () {
-            return __generator(this, function (_a) {
-                if (err) {
-                    console.error('Error converting markdown to PDF:', err);
-                }
-                else {
-                    console.log("Successfully converted markdown to ".concat(outputFile));
-                }
+        switch (_a.label) {
+            case 0:
+                input = path.join(__dirname, 'README.md');
+                output = path.join(__dirname, 'output', 'resume.pdf');
+                return [4 /*yield*/, (0, md_to_pdf_1.mdToPdf)({ path: input }, { dest: output, css: path.join(__dirname, 'resumeStyle.css') })
+                        .then(function () { return console.log('PDF generated successfully.'); })["catch"](function (err) {
+                        console.error('Error generating PDF:', err);
+                        process.exit(1);
+                    })];
+            case 1:
+                _a.sent();
                 return [2 /*return*/];
-            });
-        }); });
-        return [2 /*return*/];
+        }
     });
-}); };
-convertMarkdownToPdf(inputFilePath, outputFileName);
+}); })();
