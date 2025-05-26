@@ -1,6 +1,7 @@
 # RORY MCDANIEL  
 Frederick, MD · 864-221-2405 · rory@rorymcdaniel.info  
-https://www.linkedin.com/in/rory-mcdaniel
+[LinkedIn](https://www.linkedin.com/in/rory-mcdaniel)
+
 **Relentlessly Curious Engineer · Builder of Efficient, Understandable Systems**  
 
 ---

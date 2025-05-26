@@ -2,7 +2,7 @@ body {
   font-family: 'Liberation Sans', 'DejaVu Sans', sans-serif;
   font-size: 9.25pt;           /* Smaller font to save space */
   line-height: 1.25;           /* Slightly tighter line spacing */
-  margin: 0.25in;               /* Narrower margins */
+  margin: 0.125in 0.25in 0.25in 0.25in;  /* Reduced top margin by 50% */
   color: #222;
 }
 
