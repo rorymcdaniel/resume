@@ -55,11 +55,22 @@ jobs:
           PUPPETEER_EXECUTABLE_PATH: /usr/bin/google-chrome
           RESUME_VERSION: ${{ steps.get_version.outputs.new_version }}
 
+      - name: Verify PDF exists
+        run: |
+          PDF_PATH="output/rory-mcdaniel-resume-${{ steps.get_version.outputs.new_version }}.pdf"
+          if [ ! -f "$PDF_PATH" ]; then
+            echo "PDF file not found at $PDF_PATH"
+            ls -la output/
+            exit 1
+          fi
+          echo "PDF file found at $PDF_PATH"
+
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ steps.get_version.outputs.new_version }}
           name: Resume ${{ steps.get_version.outputs.new_version }}
-          files: output/rory-mcdaniel-resume-${{ steps.get_version.outputs.new_version }}.pdf
+          files: |
+            output/rory-mcdaniel-resume-${{ steps.get_version.outputs.new_version }}.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
