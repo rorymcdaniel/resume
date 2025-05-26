@@ -43,7 +43,6 @@ Led platform modernization and CI/CD automation while serving dual roles as back
 ### Bright Oak – Lead Engineer  
 **June 2011 – August 2020** *(Part-time 2011–2015, Full-time 2015–2020)*  
 Fostered engineering maturity as the sole technical lead at a digital agency, delivering custom full-stack solutions.  
-*Remote*
 
 - Introduced Laravel and transitioned legacy projects from procedural PHP and WordPress to MVC architecture.  
 - Built CI/CD pipelines using Git, Laravel Envoyer, and other tooling to automate deployments and enforce coding standards.  
