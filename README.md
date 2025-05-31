@@ -12,10 +12,10 @@ Frederick, MD · 864-221-2405 · rory@rorymcdaniel.info
 **September 2022 – Present**  
 SME and lead contributor on clinical scheduling systems, driving refactors and DevEx improvements across the organization.
 
-- Currently leading a clinical scheduling refactor focused on reducing DB query volume and latency. Initial results show a reduction in queries per request from ~750 to ~25 and a drop in P95 response time from 14s to under 500ms.  
+- Currently leading a clinical scheduling refactor focused on reducing DB query volume and latency. Initial results show a reduction in queries per request from ~750 to ~25 and a drop in P95 response time from 14s to under 1s.  
 - Led a full redesign of authentication for secure clinical notes, replacing a 24-hour 2FA flow with Okta-based JWTs. Led an on-time rollout to 100% of clinicians, eliminating daily login issues and improving usability.  
 - Contributed to the design and implementation of async job queues for e-prescription data migration between platforms. Ensured high accuracy of sensitive records and completed the project on time before vendor contract expiration.  
-- Developed internal tools and workflows to improve developer experience, including shared PyCharm run configs, a Django style guide, AI-assisted PR checks, and AWS-aware scripting for local development.  
+- Leading an initiative Developed internal tools and workflows to improve developer experience, including shared PyCharm run configs, AI-assisted PR checks, and AWS-aware scripting for local development. Improved local Docker Compose database import time from 6 hours to 10 minutes.
 - Representing my pillar within the organization in a cross-functional initiative focused on maintaining shared internal libraries, aligning dependencies, and preventing critical risks such as forced database or language upgrades.  
 - Coordinated critical incident response for a major client in under 2 weeks, aligning engineers and stakeholders on focused delivery goals.  
 
