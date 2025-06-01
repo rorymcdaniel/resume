@@ -67,3 +67,15 @@ Auburn University, Auburn, AL · August 2005
 
 **Bachelor of Science, Music Education**  
 Bob Jones University, Greenville, SC · December 1999  
+
+## TECHNOLOGIES
+
+Python and Django are my day-to-day right now, but I’ve worked with everything on this list and can jump back into any of it without much ramp-up. I’m also a lifelong learner, and I genuinely enjoy adding to this list.
+
+**Languages:** Python, TypeScript, PHP, JavaScript, SQL  
+**Frameworks:** Django, Laravel, Vue.js, Node.js, Express  
+**Tools & Platforms:** Docker, AWS (Lambda, ECS, RDS, S3), GitHub Actions, Okta, Datadog, Prismic, Lando, Laravel Vapor  
+**Testing & QA:** Pytest, PHPUnit, Cypress, Postman  
+**Databases:** PostgreSQL, MySQL, DynamoDB, Redis  
+**DevOps:** CI/CD, Docker Compose, GitHub Workflows, Laravel Envoyer  
+**APIs:** REST, GraphQL, JSON API
