@@ -12,12 +12,11 @@ Frederick, MD · 864-221-2405 · rory@rorymcdaniel.info
 **September 2022 – Present**  
 SME and lead contributor on clinical scheduling systems, driving refactors and DevEx improvements across the organization.
 
-- Currently leading a clinical scheduling refactor focused on reducing DB query volume and latency. Initial results show a reduction in queries per request from ~750 to ~25 and a drop in P95 response time from 14s to under 1s.  
+- Successfully completed a refactor of a search operation with equal parts focus on maintainability and performance. I successfully reduced the median response time from 4.5s to 1s and the P95 from 15s to 2.5s. 
 - Led a full redesign of authentication for secure clinical notes, replacing a cumbersome GraphQL-based 2FA system with Okta-integrated JWTs. Introduced JWT minting at the GraphQL gateway layer and downstream verification with AWS KMS, eliminating user friction and enabling a seamless, secure login flow. Rolled out the system to 100% of clinicians on time, resolving daily login issues and improving usability.  
+- Lead the team that created the official Django Conventions guide for Headspace. I invited members to the team, assigned action items, solicited feedback from staff+ engineers and leadership. 
 - Contributed to the design and implementation of async job queues for e-prescription data migration between platforms. Ensured high accuracy of sensitive records and completed the project on time before vendor contract expiration.  
-- Leading an initiative to improve developer experience through internal tools and workflows, including shared PyCharm run configs, AI-assisted PR checks, and AWS-aware scripting for local development. Improved local Docker Compose database import time from 6 hours to 10 minutes.  
-- Representing my pillar within the organization in a cross-functional initiative focused on maintaining shared internal libraries, aligning dependencies, and preventing critical risks such as forced database or language upgrades.  
-- Coordinated critical incident response for a major client in under 2 weeks, aligning engineers and stakeholders on focused delivery goals.  
+- Leading an initiative to improve developer experience through internal tools and workflows, including shared PyCharm run configs, AI-assisted PR checks, and AWS-aware scripting for local development. Improved local Docker Compose database import time from 6 hours to 10 minutes.   
 
 ### Red Ventures – Senior Software Engineer  
 **November 2021 – September 2022**  
