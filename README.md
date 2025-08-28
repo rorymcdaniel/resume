@@ -2,7 +2,7 @@
 Frederick, MD · 864-221-2405 · rory@rorymcdaniel.info  
 [https://www.linkedin.com/in/rory-mcdaniel](https://www.linkedin.com/in/rory-mcdaniel)
 
-**Relentlessly Curious Engineer · Builder of Efficient, Scalable Distributed Systems**  
+**Senior Software Engineer · I Fix Things That Need Fixing**  
 
 ---
 
